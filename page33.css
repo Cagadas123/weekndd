@@ -1,0 +1,228 @@
+/* ===== UNIVERSAL STYLES ===== */
+* {
+    margin: 0; /* Remove default margin from all elements */
+    padding: 0; /* Remove default padding from all elements */
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+}
+
+/* ===== BODY STYLES ===== */
+body {
+    font-family: Arial, sans-serif; /* Set default font for entire page */
+    background-color: #1a1a1a; /* Set dark background color */
+}
+
+/* ===== HEADER STYLES ===== */
+header {
+    background-color: #6B5344; /* Set brown/tan header background */
+    color: white; /* Set text color to white */
+    padding: 30px; /* Add padding around header content */
+}
+
+/* ===== HEADER CONTENT LAYOUT ===== */
+.header-content {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Center items vertically */
+    gap: 30px; /* Add space between image and text */
+    margin-bottom: 30px; /* Add space below header content */
+}
+
+/* ===== ALBUM COVER IMAGE ===== */
+#weeknd-image {
+    width: 180px; /* Set image width */
+    height: 180px; /* Set image height */
+    object-fit: cover; /* Maintain aspect ratio while filling space */
+    border: 3px solid #4a3f37; /* Add subtle border around image */
+}
+
+/* ===== ALBUM TITLE HEADING ===== */
+.header-text h1 {
+    font-size: 48px; /* Set large title font size */
+    font-weight: bold; /* Make title bold */
+    margin: 10px 0; /* Add space above and below title */
+}
+
+/* ===== ALBUM LABEL TEXT ===== */
+.album-label {
+    font-size: 14px; /* Set small font size for label */
+    color: #e0e0e0; /* Set light gray text color */
+    margin-bottom: 5px; /* Add space below label */
+}
+
+/* ===== SONG COUNT INFO ===== */
+.song-info {
+    font-size: 16px; /* Set font size for song info */
+    color: #d0d0d0; /* Set light gray text color */
+    margin-top: 10px; /* Add space above song info */
+}
+
+/* ===== NAVIGATION STYLES ===== */
+nav {
+    display: flex; /* Use flexbox for horizontal navigation */
+    gap: 60px; /* Add space between navigation links */
+    justify-content: center; /* Center navigation links */
+    padding-top: 20px; /* Add space above nav */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Add divider line */
+}
+
+/* ===== NAVIGATION LINKS ===== */
+nav a {
+    color: white; /* Set link text color to white */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Set font size for links */
+    font-weight: bold; /* Make links bold */
+    transition: opacity 0.3s; /* Add smooth opacity transition on hover */
+}
+
+/* ===== NAVIGATION LINK HOVER EFFECT ===== */
+nav a:hover {
+    opacity: 0.8; /* Reduce opacity when hovering over links */
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+main {
+    padding: 0; /* Remove padding from main content */
+}
+
+/* ===== SONGS TABLE CONTAINER ===== */
+.songs-table {
+    width: 100%; /* Make table full width */
+    border-collapse: collapse; /* Remove spacing between table cells */
+    background-color: black; /* Set black background */
+}
+
+/* ===== TABLE HEADER ===== */
+.songs-table thead {
+    background-color: black; /* Set header background to black */
+    border-bottom: 3px solid white; /* Add white border below header */
+}
+
+/* ===== TABLE HEADER CELLS ===== */
+.songs-table th {
+    color: white; /* Set text color to white */
+    padding: 15px 20px; /* Add padding inside header cells */
+    text-align: left; /* Align text to the left */
+    font-weight: bold; /* Make header text bold */
+    font-size: 16px; /* Set header font size */
+}
+
+/* ===== TABLE BODY ROWS ===== */
+.songs-table tbody tr {
+    border-bottom: 1px solid #333; /* Add gray divider between rows */
+}
+
+/* ===== TABLE ROW HOVER EFFECT ===== */
+.songs-table tbody tr:hover {
+    background-color: #1a1a1a; /* Change background on hover */
+}
+
+/* ===== TABLE DATA CELLS ===== */
+.songs-table td {
+    color: white; /* Set text color to white */
+    padding: 20px; /* Add padding inside cells */
+    font-size: 16px; /* Set font size for cell text */
+}
+
+/* ===== FIRST TABLE COLUMN (PLAY BUTTON) ===== */
+.songs-table td:first-child {
+    width: 60px; /* Set fixed width for first column */
+    text-align: center; /* Center align the play button */
+}
+
+/* ===== PLAY BUTTON SYMBOL ===== */
+.play-btn {
+    font-size: 20px; /* Set play button size */
+    color: white; /* Set button color to white */
+    cursor: pointer; /* Show pointer cursor on hover */
+    margin-right: 15px; /* Add space to the right of button */
+}
+
+/* ===== RESPONSIVE LAYOUT ===== */
+/* Allow horizontal scrolling on very small screens to avoid broken layout */
+main {
+    overflow-x: auto;
+}
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+    header {
+        padding: 24px; /* Slightly reduce header padding */
+    }
+    .header-content {
+        gap: 20px; /* Reduce gap between image and text */
+        margin-bottom: 20px;
+    }
+    #weeknd-image {
+        width: 150px;
+        height: 150px;
+    }
+    .header-text h1 {
+        font-size: 40px;
+    }
+    nav {
+        gap: 40px;
+    }
+}
+
+/* Tablets and large phones in landscape */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: flex-start; /* Align text to the left when stacked */
+        gap: 12px;
+    }
+    #weeknd-image {
+        width: 140px;
+        height: 140px;
+    }
+    .header-text h1 {
+        font-size: 34px;
+    }
+    .header-text {
+        max-width: calc(100% - 160px);
+    }
+    nav {
+        gap: 30px;
+        padding-top: 12px;
+        flex-wrap: wrap;
+    }
+    nav a {
+        font-size: 16px;
+    }
+    .songs-table td, .songs-table th {
+        padding: 14px; /* Reduce table cell padding */
+        font-size: 15px;
+    }
+}
+
+/* Phones and very small devices */
+@media (max-width: 480px) {
+    header {
+        padding: 18px; /* Compact header on phones */
+    }
+    #weeknd-image {
+        width: 100px;
+        height: 100px;
+        border-width: 2px;
+    }
+    .header-text h1 {
+        font-size: 24px;
+        line-height: 1.1;
+    }
+    .album-label, .song-info {
+        font-size: 13px; /* Slightly smaller metadata text */
+    }
+    nav {
+        gap: 18px;
+    }
+    nav a {
+        font-size: 14px; /* Smaller nav labels on phones */
+    }
+    .songs-table td, .songs-table th {
+        padding: 12px; /* Tighter table rows */
+        font-size: 14px;
+    }
+    .play-btn {
+        font-size: 18px; /* Slightly smaller play icon */
+        margin-right: 8px;
+    }
+}
